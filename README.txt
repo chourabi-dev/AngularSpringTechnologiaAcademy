@@ -7,3 +7,7 @@ Angular
 	install : npm install -g @angular/cli@10
 	new project : ng new project_name
 	serve the project : ng serve
+
+
+Pipes 
+	create : ng generate pipe pipe_name

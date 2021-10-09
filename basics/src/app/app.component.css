@@ -1,3 +1,17 @@
 #title{
     color: red;
 }
+
+.can-access{
+    background-color: green;
+    color: white;
+}
+
+.access-denied{
+    background-color: red;
+    color: white;
+}
+
+.btn:active{
+    background-color: blue;
+}

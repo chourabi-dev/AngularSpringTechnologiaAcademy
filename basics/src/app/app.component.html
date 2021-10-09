@@ -1,1 +1,63 @@
-<h1 id="title" >hello world</h1>
+<!--<img [src]="backgroundURL" width="100%" >
+
+<h1> {{ title }}   </h1>
+
+
+<p>
+    today is : {{today}}
+</p>
+ 
+ <ul>
+     <li  *ngFor="let e of employees"  > 
+         <h3> {{e.fullname}} </h3>
+         <small> {{e.email}} </small>
+     </li> 
+ </ul>-->
+
+
+<h1 [style.color]=" isSpecial == true ? 'red' : 'blue' " > hello world </h1>
+
+
+<!--
+.can-access{
+    background-color: green;
+    color: white;
+}
+
+.access-denied{
+    background-color: red;
+    color: white;
+}
+-->
+<button [ngClass]="isSpecial == true ? 'btn can-access' : 'btn access-denied' " >save</button>
+
+
+<button [disabled] = " ! canClick " > click me </button>
+
+
+<p [innerHTML]="content" ></p>
+
+
+<p> dd/mm/yyyy hh:mm </p>
+
+<p>{{ date |  date:'medium' }}</p>
+
+<p> {{  250 | currency:' TND' }} </p>
+
+<p> {{ 'hello world' | uppercase }} </p>
+
+<p> {{ 'HELLO WORLD' | lowercase }} </p>
+
+
+<p> {{ 'this is a title' | titlecase }} </p>
+
+
+<p> {{ 250000056655.88 | number }} </p>
+
+
+
+<p>{{'tchourabi@gmail.com' | email }}</p>
+
+<p>{{'test@yahoo.fr' | email }}</p>
+
+
