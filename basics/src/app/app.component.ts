@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -59,21 +60,152 @@ export class AppComponent {
 
   /************************************************************************************ */
 
-
+/*
   isSpecial = true;
   content = 'hello world of programmers <strong>this text is bold </strong>'; 
   canClick = true;
 
 
-  date = new Date();
+  date = new Date();*/
+
+  /********************************************************************************* */
+/*
+  userForm = new FormGroup({
+    email : new FormControl('',[Validators.required,Validators.email]),
+    fullname : new FormControl('',Validators.required),
+    password : new FormControl('',Validators.required),
+
+    address: new FormGroup({
+      ville: new FormControl('',Validators.required),
+      code: new FormControl('',Validators.required),
+      
+    })
+    
+  })
 
 
-  constructor(){
 
+  users = [];
+
+
+
+  constructor(){  
+    console.log(this.userForm);
+    
   }
 
 
+  hundleSubmit(){
+    let value = this.userForm.value;
 
+    const valid = this.userForm.valid;
+
+    value.id = this.users.length;
+
+
+    this.users.push(value);
+
+    this.userForm.reset();
+  }
+ 
+
+  deleteUser(i){
+    console.log("about to delete user N° "+i);
+    this.users.splice(i,1);
+
+    // HTTP DELETE /path + id 
+  }
+*/
+/*
+index = 0;
+successMessage=' test message';
+
+stepOne = new FormGroup({
+  username: new FormControl('',Validators.required)
+})
+
+stepTwo= new FormGroup({
+  email: new FormControl('',Validators.required)
+})
+
+
+stepThree= new FormGroup({
+  password: new FormControl('',Validators.required)
+})
+
+
+
+validateForm(){
+  this.index++;
+}
+
+
+goBack(){
+  this.index--;
+}
+
+
+save(){
+  const res = {
+    first: this.stepOne.value,
+    second: this.stepTwo.value,
+    third:this.stepThree.value
+  }
+
+  console.log(res);
+
+ this.successMessage = "user saved"
+  
+}
+
+
+closeAlert(){
+  this.successMessage='';
+}*/
+
+
+isTyping = false;
+
+chat = [];
+
+
+hundleKeyPress(e:KeyboardEvent){
+  console.log(e.key); 
+
+  const key = e.key;
+  const value = e.target.value;
+
+  if (key == 'Enter') {
+
+    this.chat.push({
+      username:"chourabi",
+      message:value,
+      date: new Date()
+    })
+
+    this.isTyping = false;
+    e.target.value = '';
+  }else{
+    this.isTyping = true
+  }
+
+ 
+ 
+}
+x=0;
+y=0;
+
+
+mouseHover(e:MouseEvent){
+  const x = e.clientX;
+  const y = e.clientY;
+
+  this.x = x;
+  this.y= y;
+  
+  
+  
+}
 
 
 }

@@ -15,20 +15,11 @@
  </ul>-->
 
 
-<h1 [style.color]=" isSpecial == true ? 'red' : 'blue' " > hello world </h1>
+<!--<h1 [style.color]=" isSpecial == true ? 'red' : 'blue' " > hello world </h1>-->
+
 
 
 <!--
-.can-access{
-    background-color: green;
-    color: white;
-}
-
-.access-denied{
-    background-color: red;
-    color: white;
-}
--->
 <button [ngClass]="isSpecial == true ? 'btn can-access' : 'btn access-denied' " >save</button>
 
 
@@ -58,6 +49,119 @@
 
 <p>{{'tchourabi@gmail.com' | email }}</p>
 
-<p>{{'test@yahoo.fr' | email }}</p>
+<p>{{'test@yahoo.fr' | email }}</p>-->
 
 
+
+
+
+<!--**************************************** forms ****************************************************-->
+<!--
+<form [formGroup]="userForm" (ngSubmit)="hundleSubmit() ">
+
+    <div>
+        <label for="">email
+            <span *ngIf=" ! userForm.controls.email.valid " class="text-danger">*</span>
+
+        </label> <br>
+        <input type="email" formControlName="email"><br>
+        <p class="text-danger" *ngIf=" ! userForm.controls.email.valid ">
+            you need to put an email
+        </p>
+    </div>
+
+    <div>
+        <label for="">fullname</label> <br>
+        <input type="text" formControlName="fullname"><br>
+    </div>
+
+    <div>
+        <label for="">password</label> <br>
+        <input type="password" formControlName="password"><br>
+    </div>
+
+
+    <div formGroupName="address" >
+        <div>
+            <label for="">ville</label> <br>
+            <input type="text" formControlName="ville"><br>
+       </div>
+        <div>
+            <label for="">code</label> <br>
+            <input type="text" formControlName="code"><br>
+        </div>
+   
+    </div>
+
+
+    
+
+    <div>
+        <button type="submit" [disabled]=" ! userForm.valid"  >Valider</button>
+    </div>
+
+
+</form>
+
+
+<hr>
+
+
+<ul>
+    <li *ngFor="let u of users">
+        <p>
+            <strong>{{u.fullname}}</strong><br>
+            <small>{{u.email}} , {{u.address.ville}},{{u.address.code}}</small><br>
+            <button (click)="deleteUser(u.id)" >delete</button>
+        </p>
+    </li>
+</ul>-->
+
+
+<!--
+<form [formGroup]="stepOne" *ngIf="index == 0" (ngSubmit)="validateForm()" >
+    <input type="text" formControlName="username" placeholder="please typein you username">
+
+    <button type="submit" [disabled]="! stepOne.valid">next</button>
+</form>
+
+
+<form [formGroup]="stepTwo" *ngIf="index == 1" (ngSubmit)="validateForm()" >
+    <input type="text" formControlName="email" placeholder="please typein you email">
+
+    <button type="button"  (click)="goBack()" >previous</button>
+    <button type="submit" [disabled]="! stepTwo.valid">next</button>
+</form>
+
+
+<form [formGroup]="stepThree" *ngIf="index == 2" (ngSubmit)="save()" >
+    <input type="text" formControlName="password" placeholder="please typein you password">
+
+    <button type="submit" [disabled]="! stepThree.valid">save</button>
+</form>
+
+
+<div class="alert-block" *ngIf="successMessage != '' ">
+    <div>
+        <p>{{successMessage}}</p> <span (click)="closeAlert()" >close</span>
+    </div>
+</div>-->
+
+
+<!--
+<ul>
+    <li *ngFor="let m of chat">
+        <p>
+            <strong>{{m.username}}:</strong> {{m.message}} <br>
+            <small>{{m.date | date:'medium'}}</small>
+        </p>
+    </li>
+</ul>
+
+<input type="text" (keyup)="hundleKeyPress($event)" >
+<p *ngIf="isTyping == true">typing...</p>-->
+
+
+<div class="feild" (mousemove)="mouseHover($event)">
+    <div class="ball" id="test" [style.left]=" x+'px'"  [style.top]="y+'px'" ></div>
+</div>
