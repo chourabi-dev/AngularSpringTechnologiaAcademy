@@ -1,0 +1,15 @@
+<div class="container">
+    <ul>
+        <li *ngFor="let c of chats">
+
+            <p>
+                <strong>{{c.user}}</strong>
+                <br>
+                {{c.lastmessage}}
+                <br>
+
+                <a [routerLink]=" '/chats/user/'+c.id ">open chat</a>
+            </p>
+        </li>
+    </ul>
+</div>

@@ -161,7 +161,17 @@
 <input type="text" (keyup)="hundleKeyPress($event)" >
 <p *ngIf="isTyping == true">typing...</p>-->
 
-
+<!--
 <div class="feild" (mousemove)="mouseHover($event)">
     <div class="ball" id="test" [style.left]=" x+'px'"  [style.top]="y+'px'" ></div>
+</div>-->
+
+
+<app-navbar></app-navbar>
+
+<div class="content">
+     <app-bloc-articles></app-bloc-articles>
 </div>
+
+
+<app-footer></app-footer>

@@ -163,7 +163,7 @@ closeAlert(){
   this.successMessage='';
 }*/
 
-
+/*
 isTyping = false;
 
 chat = [];
@@ -205,7 +205,10 @@ mouseHover(e:MouseEvent){
   
   
   
-}
+}*/
+
+
+
 
 
 }
