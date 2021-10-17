@@ -13,6 +13,9 @@ import { ChatsPageComponent } from './chats-page/chats-page.component';
 import { ChatWithUserComponent } from './chat-with-user/chat-with-user.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NewTypesComponent } from './new-types/new-types.component';
+import { HttpClientModule } from'@angular/common/http';
+import { HttpclienttestComponent } from './httpclienttest/httpclienttest.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +28,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutSecionTwoComponent,
     ChatsPageComponent,
     ChatWithUserComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    NewTypesComponent,
+    HttpclienttestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+     
   ],
   providers: [],
   bootstrap: [AppComponent]

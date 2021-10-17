@@ -11,3 +11,12 @@ Angular
 
 Pipes 
 	create : ng generate pipe pipe_name
+
+
+modules
+
+ ng g module module_name --route route_name --module app.module
+
+download postman
+
+https://www.postman.com/downloads/

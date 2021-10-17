@@ -27,6 +27,7 @@ const routes: Routes = [
 
 
   { path:'contact', component:ContactPageComponent },
+  { path: 'authentification', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   { path:'**', component:NotFoundPageComponent },
   
   
