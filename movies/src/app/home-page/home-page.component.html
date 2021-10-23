@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-12">
+        <label for="">Search for:</label>
+        <input type="text" class="form-control" placeholder="search for any movie..." (keyup)="searching($event)" >
+    </div>
+</div>
+
+
+
+<div class="row mt-5">
+    <div class="col-sm-6 col-md-3 mb-3" *ngFor="let m of movies">
+       <app-movie-card [id]="m.id" [title]="m.title" [image]="m.large_cover_image" ></app-movie-card> 
+    </div>  
+    
+</div>
