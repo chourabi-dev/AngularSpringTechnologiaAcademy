@@ -1,0 +1,41 @@
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Modifier une produit</h6>
+    </div>
+    <div class="card-body">
+       <form [formGroup]="formData" (ngSubmit)="update()" >
+           <div class="form-group mb-3">
+                <label for="">Name</label>
+                <input type="text" class="form-control" formControlName="title" >
+           </div>
+           <div class="form-group mb-3">
+                <label for="">Price</label>
+                <input type="text" class="form-control" formControlName="price" >
+           </div>
+
+           <div class="form-group mb-3">
+                <label for="">Quantity</label>
+                <input type="text" class="form-control" formControlName="quantity" >
+        </div>
+       <div class="form-group mb-3">
+            <label for="">Department</label>
+            <select type="text" class="form-control" formControlName="department_id" >
+                
+                <option [value]="d.id" *ngFor="let d of departments">{{ d.title }}</option>
+            </select>
+
+        </div>
+
+ 
+           <div class="form-group">
+                <button type="submit" class="btn btn-primary" [disabled]="! formData.valid">Modifier</button>
+            </div>
+
+
+            <div class="alert alert-success mt-3" *ngIf="succMsg!= '' ">{{succMsg}}</div>
+            <div class="alert alert-danger mt-3" *ngIf="errMsg!= '' ">{{errMsg}}</div>
+            
+       
+       </form>
+    </div>
+</div>
