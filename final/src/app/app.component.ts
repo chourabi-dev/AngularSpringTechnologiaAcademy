@@ -28,6 +28,19 @@ export class AppComponent {
         
       ]
     },
+    {
+      title:"Clients",
+      link:"/clients",
+      subMenus:[
+        { title:"Ajouter", link:"/clients/add" },
+        { title:"List", link:"/clients/list" },
+        
+        
+      ]
+    },
+
+
+    
 
   ]
 }

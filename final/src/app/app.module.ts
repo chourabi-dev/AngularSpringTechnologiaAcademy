@@ -10,6 +10,10 @@ import { DepartmentAddComponent } from './department-add/department-add.componen
 import { ProductsAddComponent } from './products-add/products-add.component';
 import { ProductsEditComponent } from './products-edit/products-edit.component';
 import { ProductsListComponent } from './products-list/products-list.component';
+import { ClientsAddComponent } from './clients-add/clients-add.component';
+import { ClientsListComponent } from './clients-list/clients-list.component';
+import { SellsAddComponent } from './sells-add/sells-add.component';
+import { SellsListingComponent } from './sells-listing/sells-listing.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { ProductsListComponent } from './products-list/products-list.component';
     DepartmentAddComponent,
     ProductsAddComponent,
     ProductsEditComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    ClientsAddComponent,
+    ClientsListComponent,
+    SellsAddComponent,
+    SellsListingComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+<h1>Create account</h1>
+
+<form [formGroup]="authForm" (ngSubmit)="createUser()" >
+    <div>
+        <label for="">name</label><br>
+        <input type="text" formControlName="name"><br>
+    </div>
+    <div>
+        <label for="">username</label><br>
+        <input type="text" formControlName="username"><br>
+    </div>
+    <div>
+        <label for="">email</label><br>
+        <input type="text" formControlName="email"><br>
+    </div>
+    <div>
+        <label for="">password</label><br>
+        <input type="text" formControlName="password"><br>
+    </div>
+    <div>
+        <label for="">CIN ID</label><br>
+        <input type="text" formControlName="cindId"><br>
+    </div>
+    
+    <div>
+        <button type="submit">create user</button>
+    </div>
+    
+</form>

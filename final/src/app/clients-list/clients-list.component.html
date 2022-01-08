@@ -1,0 +1,88 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+    <a routerLink="/clients/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Ajouter</a>
+</div>
+
+
+
+
+<div class="card shadow mb-4" *ngIf="tmpSelectedOrders.length != 0">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Selected Client orders</h6>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th> 
+                    <th>Date</th>
+                    <th>Quantity</th>
+                    <th>Product</th>
+                    
+                    
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let o of tmpSelectedOrders">
+                     <td>{{o.id}}</td>
+                     <td>{{ o.dateTransaction | date:'medium' }}</td>
+                     <td>{{ o.quantity }}</td>
+                     <td>{{ o.product.title }}</td>
+                     
+                     
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Tous les clients</h6>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Fullname</th>
+                    <th>Email</th>
+                    <th>Code client</th>
+                    <th>Odere(s)</th>
+                    
+                    <th>actions</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let c of clients">
+                    <td>{{c.id}}</td>
+                    <td>
+                        {{c.fullname}}
+                    </td>
+                    <td>
+                        {{c.email}}
+                    </td>
+                    <td>
+                        <span class="badge bg-success text-white" (click)="showOrder(c.orders)" >{{c.orders.length}} order(s)</span>
+                    </td>
+                    
+                    <td>
+                        <span class="badge bg-info text-white">{{ c.codeClient }}</span>
+                    </td>
+                    <td>
+                        <a [routerLink]=" '/sells/add/'+c.id " class="btn btn-info btn-sm">new order</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
